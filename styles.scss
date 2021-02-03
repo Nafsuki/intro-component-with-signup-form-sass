@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+$box-shadow: hsla(249, 10%, 26%, 0.342);
+$font-family: 'Poppins', sans-serif;
+
+// GENERAL SETTINGS
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: {
+    color: $red;
+    image: url('./images/bg-intro-desktop.png');
+  }
+  font-family: $font-family;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// MAIN CONTENTS
+.container {
+  width: 75vw;
+  height: 70vh;
+  display: flex;
+  header {
+    color: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1,
+    p {
+      width: 90%;
+      margin: 1rem 0;
+    }
+    h1 {
+      font-size: 4rem;
+      line-height: 4.5rem;
+    }
+  }
+  .main {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .cta-button {
+      background-color: $blue;
+      width: 100%;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.747);
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      padding: 1.5rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 0.6rem 0 0 $box-shadow;
+      margin-bottom: 2rem;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        background-color: hsl(249, 48%, 43%);
+      }
+      &:active {
+        transform: translateY(0.6rem);
+        box-shadow: 0 0 0 $box-shadow;
+        border-bottom: none;
+      }
+      span {
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+    form {
+      height: min-content;
+      width: 100%;
+      padding: 3rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0.6rem 0 0 $box-shadow;
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        input {
+          margin: 0.3rem 0;
+          width: 100%;
+          padding: 1.3rem 2rem;
+          border-radius: 0.5rem;
+          border: 1px solid #d3d3d3;
+          &:focus {
+            outline: 0;
+            border: 2px solid $grayish-blue;
+          }
+        }
+        ::placeholder {
+          font-family: $font-family;
+          font-size: 1.5rem;
+        }
+        img {
+          width: 2.3rem;
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+          right: 3%;
+          visibility: hidden;
+        }
+        small {
+          font-size: 1rem;
+          text-align: end;
+          visibility: hidden;
+        }
+        &.error {
+          input {
+            border: 2px solid $red;
+          }
+          ::placeholder {
+            color: $red;
+          }
+          img {
+            visibility: visible;
+          }
+          small {
+            color: $red;
+            font-style: italic;
+            visibility: visible;
+          }
+        }
+        &.success {
+          input {
+            border: 2px solid $green;
+          }
+        }
+      }
+
+      button {
+        font-size: 1.3rem;
+        margin: 0.8rem 0;
+        padding: 1.3rem 0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        border: none;
+        background-color: $green;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: $font-family;
+        letter-spacing: 0.1rem;
+        transition: 0.3s ease-in-out;
+        outline: 0;
+        box-shadow: 0 0.4rem 0 0 hsl(154, 58%, 39%);
+        &:hover {
+          background-color: hsl(154, 67%, 43%);
+        }
+        &:active {
+          transform: translateY(0.4rem);
+          box-shadow: 0 0 0 0 hsl(154, 58%, 39%);
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $grayish-blue;
+        .terms {
+          color: $red;
+          text-decoration: none;
+          &:hover {
+            color: hsl(0, 53%, 60%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 80vw;
+    margin: 8rem 0;
+    height: 100%;
+    .main {
+      overflow: visible;
+      margin: 5rem 0;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 90vw;
+    .main {
+      .cta-button {
+        font-size: 1.3rem;
+      }
+      form {
+        .form-control {
+          ::placeholder {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    header {
+      h1 {
+        font-size: calc(3rem + 0.6vmin);
+      }
+      p {
+        width: 95%;
+      }
+    }
+    .main {
+      .cta-button {
+        font-size: 1.6rem;
+        padding: 2.3rem 5rem;
+      }
+      form {
+        .form-control {
+          input {
+            padding: 2.3rem 2rem;
+          }
+          ::placeholder {
+            font-size: 1.6rem;
+            font-weight: 600;
+          }
+        }
+        button {
+          margin: 0;
+          font-size: 1.6rem;
+          padding: 1.8rem 0;
+        }
+        p {
+          width: 95%;
+          margin: 2rem auto 0rem;
+          line-height: 2.3rem;
+          font: {
+            size: 1.2rem;
+            weight: 500;
+          }
+          .terms {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
