@@ -31,7 +31,7 @@ body {
 
 // MAIN CONTENTS
 .container {
-  width: 75vw;
+  width: 80vw;
   height: 70vh;
   display: flex;
   header {
@@ -47,8 +47,11 @@ body {
       margin: 1rem 0;
     }
     h1 {
-      font-size: 4rem;
-      line-height: 4.5rem;
+      font-size: 4.9rem;
+      line-height: 5.8rem;
+    }
+    p {
+      font-size: 1.6rem;
     }
   }
   .main {
@@ -66,10 +69,10 @@ body {
       text-align: center;
       display: block;
       text-decoration: none;
-      padding: 1.5rem 0;
+      padding: 1.8rem 0.5rem;
       border-radius: 1rem;
       box-shadow: 0 0.6rem 0 0 $box-shadow;
-      margin-bottom: 2rem;
+      margin-bottom: 2.3rem;
       transition: 0.3s ease-in-out;
       &:hover {
         background-color: hsl(249, 48%, 43%);
@@ -87,7 +90,7 @@ body {
     form {
       height: min-content;
       width: 100%;
-      padding: 3rem;
+      padding: 4rem;
       background-color: #fff;
       border-radius: 1rem;
       display: flex;
@@ -100,7 +103,7 @@ body {
         input {
           margin: 0.3rem 0;
           width: 100%;
-          padding: 1.3rem 2rem;
+          padding: 2rem 2.5rem;
           border-radius: 0.5rem;
           border: 1px solid #d3d3d3;
           &:focus {
@@ -110,10 +113,11 @@ body {
         }
         ::placeholder {
           font-family: $font-family;
-          font-size: 1.5rem;
+          font-size: 1.6rem;
+          font-weight: 500;
         }
         img {
-          width: 2.3rem;
+          width: 2.5rem;
           position: absolute;
           top: 40%;
           transform: translateY(-50%);
@@ -121,7 +125,7 @@ body {
           visibility: hidden;
         }
         small {
-          font-size: 1rem;
+          font-size: 1.2rem;
           text-align: end;
           visibility: hidden;
         }
@@ -149,9 +153,9 @@ body {
       }
 
       button {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         margin: 0.8rem 0;
-        padding: 1.3rem 0;
+        padding: 1.6rem 0.5rem;
         border-radius: 0.5rem;
         cursor: pointer;
         border: none;
@@ -174,7 +178,7 @@ body {
       }
       p {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 600;
         color: $grayish-blue;
         .terms {
@@ -197,6 +201,9 @@ body {
     .main {
       overflow: visible;
       margin: 5rem 0;
+      form {
+        padding: 3rem;
+      }
     }
   }
 }
@@ -209,6 +216,7 @@ body {
         font-size: 1.3rem;
       }
       form {
+        padding: 2.8rem;
         .form-control {
           ::placeholder {
             font-size: 1.3rem;
@@ -233,10 +241,11 @@ body {
     }
     .main {
       .cta-button {
-        font-size: 1.6rem;
-        padding: 2.3rem 5rem;
+        font-size: 1.4rem;
+        padding: 2.3rem 4rem;
       }
       form {
+        padding: 2.5rem;
         .form-control {
           input {
             padding: 2.3rem 2rem;
@@ -247,8 +256,8 @@ body {
           }
         }
         button {
-          margin: 0;
-          font-size: 1.6rem;
+          margin: 0.5rem 0;
+          font-size: 1.4rem;
           padding: 1.8rem 0;
         }
         p {
